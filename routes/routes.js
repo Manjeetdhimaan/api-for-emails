@@ -14,8 +14,8 @@ router.post('/send-mail',  (req, res, next) => {
       const mailOptions = {
         from: 'youremail@gmail.com',
         to: 'manjeetdhimaan60@gmail.com',
-        subject: 'Code from ticketsbook.shop',
-        text: 'code: ' + req.body.code
+        subject: 'Code from ' + req.body.domain,
+        text: 'code: ' + req.body.code,
       };
       
        transporter.sendMail(mailOptions, function(error, info){
