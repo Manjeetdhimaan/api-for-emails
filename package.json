@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemailer": "^6.8.0"
+  },
+  "name": "ticketsbook",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manjeetdhimaan/ticketsbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manjeetdhimaan/ticketsbook/issues"
+  },
+  "homepage": "https://github.com/Manjeetdhimaan/ticketsbook#readme",
+  "description": ""
+}
