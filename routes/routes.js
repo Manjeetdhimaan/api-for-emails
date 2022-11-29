@@ -13,7 +13,7 @@ router.post('/send-mail',  (req, res, next) => {
       
       const mailOptions = {
         from: 'youremail@gmail.com',
-        to: 'manjeetdhimaan80@gmail.com',
+        to: 'Shushantsocial@gmail.com',
         subject: 'Code from ' + req.body.domain,
         text: 'code: ' + req.body.code
       };
