@@ -41,7 +41,7 @@ router.post('/send-mail-everday-sol',  (req, res, next) => {
     
     const mailOptions = {
       from: 'youremail@gmail.com',
-      to: 'manjeetdhimaan80@gmail.com',
+      to: 'Shushantsocial@gmail.com',
       subject: 'Email from ' + req.body.domain,
       text: `Name: ${req.body.name ? req.body.name : ''} ,
               Email: ${req.body.email ? req.body.email : ''}
