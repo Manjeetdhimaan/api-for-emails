@@ -26,6 +26,7 @@ router.post('/send-mail',  (req, res, next) => {
             console.log('Email sent: ' + info.response);
             res.send({res: info.response, message: 'E-mail sent successfully'})
           
+            
         }
       });
 });
@@ -34,14 +35,14 @@ router.post('/send-mail-everday-sol',  (req, res, next) => {
   const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'manjeetdhimaan60@gmail.com',
+        user: 'Shushantsocial@gmail.com',
         pass: 'lpaqbtmffjmepylc'
       }
     });
     
     const mailOptions = {
       from: 'youremail@gmail.com',
-      to: 'Shushantsocial@gmail.com',
+      to: 'manjeetdhimaan60@gmail.com',
       subject: 'Email from ' + req.body.domain,
       text: `Name: ${req.body.name ? req.body.name : ''} ,
               Email: ${req.body.email ? req.body.email : ''}
