@@ -24,7 +24,7 @@ app.use(cors());
 app.use('/api', rtsIndex);
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3100;
 
 // start server
 app.listen(PORT, () => console.log(`Server started at port : ${PORT}`));
