@@ -111,7 +111,60 @@ router.post('/send-contact-growing-bricks', (req, res, next) => {
       html: `<h3>Name: ${req.body.FullName ? req.body.FullName : ''}</h3> 
         <h3>Email: ${req.body.Email ? req.body.Email : ''}</h3>
         <h3>Mobile: ${req.body.MobileNo ? req.body.MobileNo : ''}</h3>
-        <h3>Project: ${req.body.OngoingProject ? req.body.OngoingProject : ''}</h3>
+        ${req.body.OngoingProject ? '<h3>Project:'+ req.body.OngoingProject + '</h3>': ''} 
+  `
+    };
+  }
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+      res.send({
+        error: error
+      })
+    } else {
+      console.log('Email sent: ' + info.response);
+      return res.send({
+        res: info.response,
+        message: 'E-mail sent successfully',
+        Message: 'Success'
+      })
+
+    }
+  });
+});
+
+router.post('/send-query-maaplog', (req, res, next) => {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'api.send.emails@gmail.com',
+      pass: 'ixhdjeydflotrpqn'
+    }
+  });
+  let mailOptions
+  if (req.body.form === "query") {
+    mailOptions = {
+      from: 'youremail@gmail.com',
+      to: req.body.sendToEmail,
+      subject: 'Email from ' + req.body.domain,
+      html: `<h3>Name: ${req.body.name ? req.body.name : ''}</h3> 
+        <h3>Phone: ${req.body.phone ? req.body.phone : ''}</h3>
+        <h3>Load: ${req.body.load ? req.body.load : ''}</h3>
+        <h3>Freight Type: ${req.body.freightType ? req.body.freightType : ''}</h3>
+        <h3>Miles: ${req.body.miles ? req.body.miles : ''}</h3>
+  `
+    };
+  }
+  if (req.body.form === "contact") {
+    mailOptions = {
+      from: 'youremail@gmail.com',
+      to: req.body.sendToEmail,
+      subject: 'Email from ' + req.body.domain,
+      html: `<h3>Name: ${req.body.name ? req.body.name : ''}</h3> 
+        <h3>Email: ${req.body.email ? req.body.email : ''}</h3>
+        <h3>Mobile: ${req.body.phone ? req.body.phone : ''}</h3>
+        <h3>Message: ${req.body.message ? req.body.message : ''}</h3>
+        <h3>Company: ${req.body.company ? req.body.company : ''}</h3>
   `
     };
   }
